@@ -1,0 +1,39 @@
+<div class="container mt-4" *ngIf="artista">
+  <div class="artista-container">
+    <img [src]="artista.images[0]?.url" class="artista-imagen" alt="Imagen del artista">
+    <h3 class="artista-nombre">{{ artista.name }}</h3>
+    <p class="artista-detalles"><strong>Géneros:</strong> {{ artista.genres?.join(', ') }}</p>
+    <p class="artista-detalles"><strong>Popularidad:</strong> {{ artista.popularity }} / 100</p>
+    <a [href]="artista.external_urls.spotify" class="btn btn-spotify mt-2" target="_blank">
+      <i class="fab fa-spotify"></i> Ver en Spotify
+    </a>
+  </div>
+
+  <div class="lista-canciones">
+    <h4>Canciones Más Populares</h4>
+    <ul class="list-group">
+      <li *ngFor="let track of topTracks" 
+          class="list-group-item list-group-item-action"
+          (click)="goToTrackDetail(track.id)"
+          style="cursor: pointer;">
+        <span>{{ track.name }}</span>
+        <span>{{ (track.duration_ms / 60000) | number:'1.2-2' }} min</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lista-albumes">
+    <h4>Álbumes</h4>
+    <div class="row">
+      <div *ngFor="let album of albums" class="col-md-3">
+        <div class="card mb-3" (click)="goToAlbumDetail(album.id)" style="cursor: pointer;">
+          <img [src]="album.images[0]?.url" class="card-img-top" alt="Carátula del álbum">
+          <div class="card-body">
+            <h5 class="card-title">{{ album.name }}</h5>
+            <p class="card-text">{{ album.release_date | date:'yyyy' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

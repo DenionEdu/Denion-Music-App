@@ -1,0 +1,59 @@
+<div class="container mt-4">
+  <h2>Resultados para "{{ searchTerm }}"</h2>
+
+  <!-- Canciones -->
+  <div *ngIf="tracks.length > 0">
+    <h3>Canciones</h3>
+    <div class="row">
+      <div *ngFor="let track of tracks" class="col-md-4">
+        <div class="card" (click)="goToTrackDetail(track.id)" style="cursor: pointer;">
+          <img [src]="track.album.images.length > 0 ? track.album.images[0].url : 'assets/no-image.png'" class="card-img-top" alt="Carátula" />
+          <div class="card-body">
+            <h5 class="card-title">{{ track.name }}</h5>
+            <p class="card-text">Artista: {{ track.artists[0]?.name }}</p>
+            <button class="btn btn-primary mt-2">
+              <i class="fas fa-info-circle"></i> Ver Detalles
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Artistas -->
+  <div *ngIf="artists.length > 0">
+    <h3>Artistas</h3>
+    <div class="row">
+      <div *ngFor="let artist of artists" class="col-md-4">
+        <div class="card" (click)="goToArtistDetail(artist.id)" style="cursor: pointer;">
+          <img [src]="artist.images.length > 0 ? artist.images[0].url : 'assets/no-image.png'" class="card-img-top" alt="Imagen del Artista" />
+          <div class="card-body">
+            <h5 class="card-title">{{ artist.name }}</h5>
+            <button class="btn btn-primary mt-2">
+              <i class="fas fa-info-circle"></i> Ver Detalles
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Álbumes -->
+  <div *ngIf="albums.length > 0">
+    <h3>Álbumes</h3>
+    <div class="row">
+      <div *ngFor="let album of albums" class="col-md-4">
+        <div class="card" (click)="goToAlbumDetail(album.id)" style="cursor: pointer;">
+          <img [src]="album.images.length > 0 ? album.images[0].url : 'assets/no-image.png'" class="card-img-top" alt="Carátula del Álbum" />
+          <div class="card-body">
+            <h5 class="card-title">{{ album.name }}</h5>
+            <p class="card-text">Artista: {{ album.artists[0]?.name }}</p>
+            <button class="btn btn-primary mt-2">
+              <i class="fas fa-info-circle"></i> Ver Detalles
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container mt-4" *ngIf="track">
+  <div class="cancion-container">
+    <img [src]="track.album.images[0]?.url" class="cancion-imagen" alt="Carátula del álbum">
+    <div class="cancion-info">
+      <h3 class="cancion-titulo">{{ track.name }}</h3>
+      <p class="cancion-detalles">
+        <strong>Artista:</strong>
+        <a [routerLink]="['/detalle-artista', track.artists[0]?.id]">{{ track.artists[0]?.name }}</a>
+      </p>
+      <p class="cancion-detalles">
+        <strong>Álbum:</strong>
+        <a [routerLink]="['/detalle-album', track.album.id]">{{ track.album.name }}</a>
+      </p>
+      <p class="cancion-detalles"><strong>Duración:</strong> {{ (track.duration_ms / 60000) | number:'1.2-2' }} min</p>
+      <p class="cancion-detalles"><strong>Fecha de lanzamiento:</strong> {{ track.album.release_date }}</p>
+      <p class="cancion-detalles"><strong>Popularidad:</strong> {{ track.popularity }} / 100</p>
+
+      <div *ngIf="track.explicit" class="alert alert-warning p-1 d-inline-block">⚠️ Contenido explícito</div>
+
+      <div class="audio-container">
+        <a [href]="track.external_urls.spotify" class="btn btn-spotify" target="_blank">
+          <i class="fab fa-spotify"></i> Abrir en Spotify
+        </a>
+        <audio *ngIf="track.preview_url" controls>
+          <source [src]="track.preview_url" type="audio/mpeg">
+          Tu navegador no soporta la reproducción de audio.
+        </audio>
+      </div>
+    </div>
+  </div>
+</div>

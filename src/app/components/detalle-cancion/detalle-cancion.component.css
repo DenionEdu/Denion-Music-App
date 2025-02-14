@@ -1,0 +1,66 @@
+.cancion-container {
+    background-color: #18181b;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cancion-imagen {
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 4px solid #9146FF;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cancion-imagen:hover {
+    transform: scale(1.1);
+}
+
+.cancion-info {
+    flex: 1;
+}
+
+.cancion-titulo {
+    font-size: 1.8rem;
+    color: #c792ea;
+    font-weight: bold;
+}
+
+.cancion-detalles {
+    font-size: 1.1rem;
+    color: #b3b3b3;
+    margin-top: 10px;
+}
+
+.audio-container {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.audio-container audio {
+    width: 100%;
+    max-width: 300px;
+}
+
+.btn-spotify {
+    background-color: #772ce8;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 8px 15px;
+    transition: 0.3s;
+    border: 2px solid #9146FF; /* Borde de color brillante */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.btn-spotify:hover {
+    background-color: #5b1dbf;
+    border-color: #c792ea; /* Cambio de color del borde en hover */
+}

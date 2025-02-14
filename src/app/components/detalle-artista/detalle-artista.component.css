@@ -1,0 +1,72 @@
+.artista-container {
+    background-color: #18181b;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.artista-imagen {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #9146FF;
+    transition: transform 0.3s ease-in-out;
+}
+
+.artista-imagen:hover {
+    transform: scale(1.1);
+}
+
+.artista-nombre {
+    font-size: 2rem;
+    color: #c792ea;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.artista-detalles {
+    color: #b3b3b3;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.lista-canciones, .lista-albumes {
+    background-color: #252529;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.lista-canciones h4, .lista-albumes h4 {
+    color: #c792ea;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.lista-canciones .list-group-item, .lista-albumes .list-group-item {
+    background-color: #18181b;
+    border-radius: 8px;
+    border: 1px solid #27272a;
+    transition: background 0.3s ease-in-out;
+}
+
+.lista-canciones .list-group-item:hover, .lista-albumes .list-group-item:hover {
+    background-color: #2d2d31;
+}
+.btn-spotify {
+    background-color: #772ce8;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 8px 15px;
+    transition: 0.3s;
+    border: 2px solid #9146FF; /* Borde de color brillante */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.btn-spotify:hover {
+    background-color: #5b1dbf;
+    border-color: #c792ea; /* Cambio de color del borde en hover */
+}

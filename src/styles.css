@@ -1,1 +1,109 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos generales */
+body {
+    background-color: #0e0e10;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #18181b;
+    padding: 1rem;
+  }
+  .navbar-brand {
+    color: #9146FF !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #c792ea !important;
+  }
+  
+  /* Botones */
+  .btn-primary {
+    background-color: #9146FF;
+    border-color: #9146FF;
+    color: #ffffff;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .btn-primary:hover {
+    background-color: #772ce8;
+    border-color: #772ce8;
+  }
+  .btn-success {
+    background-color: #772ce8;
+    border-color: #772ce8;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  .btn-success:hover {
+    background-color: #5b1dbf;
+  }
+  
+  /* Tarjetas */
+  .card {
+    background-color: #18181b;
+    color: #ffffff;
+    border: 1px solid #27272a;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .card-title {
+    color: #c792ea;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .card-text {
+    color: #b3b3b3;
+  }
+  
+  /* Formularios */
+  .form-control {
+    background-color: #2d2d31;
+    color: #ffffff;
+    border: 1px solid #3b3b42;
+    border-radius: 8px;
+  }
+  .form-control::placeholder {
+    color: #b3b3b3;
+  }
+  
+  /* Listas */
+  .list-group-item {
+    background-color: #18181b;
+    color: #ffffff;
+    border-color: #27272a;
+    transition: 0.3s;
+  }
+  .list-group-item:hover {
+    background-color: #252529;
+  }
+  
+  /* Enlaces */
+  a {
+    color: #9146FF;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a:hover {
+    color: #c792ea;
+    text-decoration: underline;
+  }
+  
+  /* Títulos y textos */
+  h1, h2, h3, h4 {
+    color: #c792ea;
+    font-weight: bold;
+  }
+  .text-center {
+    color: #ffffff;
+  }
+  

@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <h1 class="text-center">Bienvenido a Spotify Search</h1>
+  <p class="text-center">Explora las mejores canciones, artistas y álbumes</p>
+
+  <!-- 📀 Álbumes Destacados -->
+  <div *ngIf="featuredAlbums.length > 0">
+    <h3>📀 Álbumes Destacados</h3>
+    <div class="row">
+      <div *ngFor="let album of featuredAlbums" class="col-md-4">
+        <div class="card" (click)="goToAlbumDetail(album.id)" style="cursor: pointer;">
+          <img [src]="album.images[0]?.url" class="card-img-top" alt="Carátula del Álbum" />
+          <div class="card-body">
+            <h5 class="card-title">{{ album.name }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🎧 Top Canciones de Artistas Populares -->
+  <div *ngIf="topTracksByArtists.length > 0">
+    <h3>🎧 Top Canciones de Artistas Populares</h3>
+    <div class="row">
+      <div *ngFor="let track of topTracksByArtists" class="col-md-4">
+        <div class="card" (click)="goToTrackDetail(track.id)" style="cursor: pointer;">
+          <img [src]="track.album?.images[0]?.url" class="card-img-top" alt="Carátula" />
+          <div class="card-body">
+            <h5 class="card-title">{{ track.name }}</h5>
+            <p class="card-text">Artista: {{ track.artists[0]?.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🚀 Artistas en Tendencia -->
+  <div *ngIf="trendingArtists.length > 0">
+    <h3>🚀 Artistas en Tendencia</h3>
+    <div class="row">
+      <div *ngFor="let artist of trendingArtists" class="col-md-4">
+        <div class="card" (click)="goToArtistDetail(artist.id)" style="cursor: pointer;">
+          <img [src]="artist.images[0]?.url" class="card-img-top" alt="Imagen del Artista" />
+          <div class="card-body">
+            <h5 class="card-title">{{ artist.name }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container mt-4" *ngIf="album">
+  <div class="album-container">
+    <img [src]="album.images[0]?.url" class="album-imagen" alt="Carátula del álbum">
+    <div class="album-info">
+      <h3 class="album-titulo">{{ album.name }}</h3>
+      <p class="album-detalles">
+        <strong>Artista:</strong>
+        <a [routerLink]="['/detalle-artista', album.artists[0]?.id]">{{ album.artists[0]?.name }}</a>
+      </p>
+      <p class="album-detalles"><strong>Fecha de lanzamiento:</strong> {{ album.release_date }}</p>
+      <p class="album-detalles"><strong>Total de canciones:</strong> {{ album.total_tracks }}</p>
+      <a [href]="album.external_urls.spotify" class="btn btn-spotify mt-2" target="_blank">
+        <i class="fab fa-spotify"></i> Abrir en Spotify
+      </a>
+    </div>
+  </div>
+
+  <div class="lista-canciones">
+    <h4>Lista de Canciones</h4>
+    <ul class="list-group">
+      <li *ngFor="let track of album.tracks?.items" 
+          class="list-group-item list-group-item-action"
+          (click)="goToTrackDetail(track.id)"
+          style="cursor: pointer;">
+        <span>{{ track.track_number }}. {{ track.name }}</span>
+        <span>{{ (track.duration_ms / 60000) | number:'1.2-2' }} min</span>
+      </li>
+    </ul>
+  </div>
+</div>
